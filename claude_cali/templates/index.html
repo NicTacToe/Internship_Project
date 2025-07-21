@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>California Cybersecurity Chatbot</title>
+  <style>
+    body { font-family: Arial; padding: 2rem; background: #f0f2f5; }
+    #chatbox { max-width: 700px; margin: auto; background: white; padding: 2rem; border-radius: 8px; }
+    .bubble { padding: 1rem; margin-bottom: 1rem; border-radius: 10px; }
+    .user { background: #e0f7fa; text-align: right; }
+    .bot { background: #e8f5e9; text-align: left; }
+    #input-area { margin-top: 1rem; display: flex; gap: 1rem; }
+    input[type="text"] { flex-grow: 1; padding: 0.5rem; }
+    button { padding: 0.5rem 1rem; }
+  </style>
+</head>
+<body>
+  <div id="chatbox">
+    <h2>🤖 California Cybersecurity Chatbot</h2>
+    <div id="conversation"></div>
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Ask a question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("user-input");
+      const question = input.value.trim();
+      if (!question) return;
+
+      const convo = document.getElementById("conversation");
+      convo.innerHTML += `<div class='bubble user'><strong>You:</strong> ${question}</div>`;
+      input.value = "";
+
+      const response = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
+      });
+
+      const data = await response.json();
+      const answer = data.answer || "Something went wrong.";
+      convo.innerHTML += `<div class='bubble bot'><strong>Chatbot:</strong> ${answer}</div>`;
+    }
+  </script>
+</body>
+</html>
