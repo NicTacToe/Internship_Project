@@ -1,0 +1,292 @@
+[
+  {
+    "question": "Hi",
+    "answer": "Hello! I'm your California cybersecurity information assistant. What can I help you with today?",
+    "category": "General"
+  },
+  {
+    "question": "How are you?",
+    "answer": "I'm doing great! How can I assist you today?",
+    "category": "General"
+  },
+  {
+    "question": "What is California's cybersecurity strategy?",
+    "answer": "California’s cybersecurity strategy is developed by Cal‑CSIC under Cal OES and centers on statewide threat detection, incident preparedness, digital forensics, public-private collaboration, workforce development, and standardized data protection—aligning with state law and federal best practices.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What was the latest cyber threat reported?",
+    "answer": "According to Cal‑CSIC’s 2021–23 report, ransomware attacks saw a 57% increase and phishing threats remain highly prevalent statewide, with over 1,500 total cybersecurity incidents documented.",
+    "category": "Threats"
+  },
+  {
+    "question": "How does Cal OES handle active incidents?",
+    "answer": "Cal OES runs Cal‑CSIC and a 24/7 Cyber Incident Response Team (CIRT) that performs real-time monitoring, threat detection, digital forensics, incident coordination via ESF‑18, and supports remediation across public/private sectors.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What is cybersecurity?",
+    "answer": "Cybersecurity is the practice of protecting internet-connected systems—physical and virtual—from digital attacks that aim to access, alter, or destroy data, often by adversaries using techniques like malware, phishing, or ransomware.",
+    "category": "General"
+  },
+  {
+    "question": "Why should I care about cyber threats?",
+    "answer": "Cyber threats can disrupt critical state infrastructure, expose personal data, and interrupt services Californians rely on. Cal OES identifies them as growing in frequency and sophistication, posing rising statewide risk.",
+    "category": "General"
+  },
+  {
+    "question": "Is my personal data at risk online?",
+    "answer": "Yes—malicious actors use ransomware, phishing, and data breaches, which are rising in California: ransomware incidents rose 57% from 2021–2023, and personal data is often the target.",
+    "category": "General"
+  },
+  {
+    "question": "How often should I update my passwords?",
+    "answer": "While California government guidance recommends strong, unique passwords and multi-factor authentication, it also emphasizes regular updates—especially if you suspect compromise—even though specific timeframes aren't mandated.",
+    "category": "General"
+  },
+  {
+    "question": "Can this chatbot help with online safety tips?",
+    "answer": "Yes—it can provide guidance based on California government resources from Cal‑CSIC such as steps for strong passwords, recognizing phishing, reporting incidents, and implementing MFA.",
+    "category": "General"
+  },
+  {
+    "question": "How do I know if a site is secure?",
+    "answer": "The state advises verifying HTTPS in the browser bar, checking for valid certificates, and trusting official state domains (.ca.gov) as a best practice.",
+    "category": "General"
+  },
+  {
+    "question": "What is two-factor authentication?",
+    "answer": "Two‑factor authentication (2FA) adds a second verification step—like a code from your phone—beyond your password. Cal‑CSIC strongly recommends 2FA to reduce account compromise.",
+    "category": "General"
+  },
+  {
+    "question": "What are some good cybersecurity practices?",
+    "answer": "Best practices include using unique passwords or passphrases, enabling MFA, monitoring for alerts, updating software frequently, and reporting suspicious activity—consistent with Cal‑CSIC education efforts.",
+    "category": "General"
+  },
+  {
+    "question": "Is this chatbot safe to use?",
+    "answer": "This chatbot provides information sourced from official California cybersecurity agencies (Cal‑CSIC, Cal OES) and does not collect personal data—intended solely for public awareness and security guidance.",
+    "category": "General"
+  },
+  {
+    "question": "Where can I learn more about online safety?",
+    "answer": "Official California government resources include Cal‑CSIC and Cal OES websites, ESF‑18 Annex documentation, and public bulletins issued through Cal‑CSIC’s Cyber Threat Intelligence program.",
+    "category": "General"
+  },
+  {
+    "question": "Does California have a cybersecurity strategy?",
+    "answer": "Yes—state law and executive directives task Cal‑CSIC with drafting a comprehensive statewide cybersecurity strategy focused on preparedness, response, forensics, training, and public awareness under ESF‑18.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the California Cybersecurity Integration Center?",
+    "answer": "The Cal‑CSIC is California’s cybersecurity hub, part of Cal-OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is Cal-CSIC?",
+    "answer": "The Cal‑CSIC is California’s cybersecurity hub, part of Cal-OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What are California's cybersecurity laws?",
+    "answer": "California has several key cybersecurity laws. Some examples are SB-327 (IoT Security Law) which requires IoT devices to have unique passwords, CCPA (California Consumer Privacy Act), which protects consumer data and requires breach notifications, SB-1001, which requires disclosure of data collection by bots, and Civil Code 1798.82, which mandates breach notifications to affected individuals. These laws position California as a leader in privacy and cybersecurity regulation.",
+    "category": "General"
+  },
+  {
+    "question": "What is Cal-CSIC?",
+    "answer": "The Cal‑CSIC is California's cybersecurity hub, part of Cal OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does the state educate people about cyber threats?",
+    "answer": "Cal‑CSIC and Cal OES deliver training through live/virtual courses, cyber ranges, tabletop exercises, and public awareness programs—aligning with national standards via ESF‑18.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What are some public-private partnerships for cybersecurity?",
+    "answer": "Cal‑CSIC operates several public–private partnerships—including the Cybersecurity Task Force which includes utilities, academia, law enforcement, and tech partners—to coordinate threat intelligence sharing, cyber exercises, and joint incident response.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "Is cybersecurity taught in California schools?",
+    "answer": "Yes—Cal‑CSIC partners with programs like GirlsGoCyberStart (supported by Cal‑OES, CDT & GO‑Biz) to promote cybersecurity awareness and training for high school students, especially girls.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What are California's digital resilience programs?",
+    "answer": "The Cal‑Secure Roadmap prioritizes resilience measures such as virtual CISO services for underserved agencies, vulnerability scanning, anti-malware training, and ransomware preparedness across state/local governments.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "Are there internship programs for cybersecurity in CA?",
+    "answer": "Yes—Cal‑OES offers cybersecurity internships and training opportunities. Their careers page invites applicants to “Learn about Internships at Cal OES” which include experience in incident response and awareness programs.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does the government fund cyber programs?",
+    "answer": "Cal‑OES administers federal grants like the State & Local Cybersecurity Grant Program (SLCGP) funded by IIJA/CISA/FEMA; CA’s plan received approval in Sept 2023 and awards funds to state, local, tribal entities for planning, training, and equipment.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What are the cyber training resources available for citizens?",
+    "answer": "Cal‑CSIC provides free statewide training—cyber ranges, tabletops, virtual CISO services, anti-malware workshops, & phishing awareness—via its ESF‑18 Annex implementation.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "Are there community outreach programs related to cybersecurity?",
+    "answer": "Yes—Cal‑CSIC engages in public outreach via Cybersecurity Awareness Month campaigns, regional partnerships (e.g., with utilities & fusion centers), and school-targeted programs under AB 2355 and Cal‑CSIC mandates.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is malware?",
+    "answer": "Malware (malicious software) is any software designed to harm devices or networks by disrupting operations, stealing data, or launching attacks—e.g., viruses, worms, ransomware—identified as a major threat to critical infrastructure in California’s ESF‑18 Annex.",
+    "category": "Threats"
+  },
+  {
+    "question": "How do phishing emails work?",
+    "answer": "Phishing emails impersonate trusted entities to trick recipients into revealing credentials or downloading malware. Cal‑CSIC analysts collect and publish Indicators of Compromise (IOCs) from phishing campaigns via its Automated Indicator Exchange.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is ransomware?",
+    "answer": "Ransomware is malware that encrypts data or locks systems until a ransom is paid. California has seen a rise in ransomware, prompting statewide training and resilience programs under ESF‑18 and Cal‑Secure.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is a brute force attack?",
+    "answer": "A brute force attack systematically tries all password combinations to gain unauthorized access. Cal‑CSIC training programs emphasize password strength and anti-brute-force measures such as MFA and account lockouts.",
+    "category": "Threats"
+  },
+  {
+    "question": "How do hackers steal data?",
+    "answer": "Hackers may use malware, phishing, brute-force or exploits to breach systems. Cal‑CSIC defends against these threats via digital forensics, vulnerability scanning, and public awareness.",
+    "category": "Threats"
+  },
+  {
+    "question": "Are state networks vulnerable to attack?",
+    "answer": "Yes—state networks are considered high-risk due to critical infrastructure dependencies. The ESF‑18 Annex acknowledges this risk and mandates continuous monitoring, anti-malware, and resilience programs.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is social engineering?",
+    "answer": "Social engineering manipulates users to disclose sensitive information or install malware. Cal‑CSIC addresses this threat by running phishing awareness campaigns and collecting IOCs from real-world attacks.",
+    "category": "Threats"
+  },
+  {
+    "question": "How can I protect against ransomware?",
+    "answer": "California advises anti-malware updates, offline backups, MFA, staff training (email hygiene), and virtual CISO support for smaller agencies—all part of ESF‑18 resilience mandates.",
+    "category": "Threats"
+  },
+  {
+    "question": "What threats target small businesses?",
+    "answer": "Small businesses in CA are frequently targeted by ransomware, phishing, and malware. The ESF‑18 Annex and Cal‑CSIC provide tailored programs (virtual CISO, training) to support them.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is the most common cyber threat today?",
+    "answer": "According to Cal‑CSIC, phishing remains the most common cyber‑attack across California governments and critical infrastructure, often used to steal credentials or distribute malware. Cal‑OES consistently emphasizes its high frequency in awareness campaigns.",
+    "category": "Threats"
+  },
+  {
+    "question": "Recent cyber threats in California",
+    "answer": "Recent breaches reported via the California Attorney General include cyber incidents affecting entities like BYU‑Pathway, Synergy Radiation Oncology, and the Franchise Tax Board between 2024–2025, with notifications publicly listed.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What was the most severe breach in California’s history?",
+    "answer": "One of the most severe was the 2024 San Mateo Health Plan breach, affecting patient health data—highlighted in the AG’s breach report—and earlier, in 2017, the Sacramento Rehabilitation Hospital incident impacted thousands of medical records.",
+    "category": "Incidents"
+  },
+  {
+    "question": "How does the state notify citizens about data breaches?",
+    "answer": "Under California Civil Code §§1798.29/1798.82, state agencies and businesses must notify affected residents when unencrypted personal information is compromised, and submit a sample breach notification to the Attorney General if over 500 Californians were affected.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What was Cal OES’s response to the last cyber incident?",
+    "answer": "Cal‑OES (via Cal‑CSIC) coordinates forensic analysis, threat intel sharing, containment, and recovery under ESF‑18, as seen in the Health Plan of San Mateo and Sacramento Hospital breaches—supporting remediation and local incident response.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What agencies respond to cyber emergencies?",
+    "answer": "California’s emergency response is led by Cal‑CSIC within Cal‑OES (as ESF‑18 lead), alongside CDT, CHP, Attorney General’s Office, local Fusion Centers, DHS, and CISA during major cyber events.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What happens when a school gets hacked in California?",
+    "answer": "Schools must report incidents under AB‑2355 to Cal‑CSIC (via email or hotline) and inform affected individuals per state breach notification law; Cal‑OES may also provide guidance and support.",
+    "category": "Incidents"
+  },
+  {
+    "question": "Who investigates cyber incidents in CA?",
+    "answer": "Cal‑CSIC teams perform digital forensics and coordinate with the Attorney General’s Cybercrime Section, CHP, local law enforcement, DHS and CISA for broader incident investigation.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What is the process of reporting a cyber attack in CA?",
+    "answer": "Affected entities report to Cal‑CSIC via email (calcsic@caloes.ca.gov) or 833‑REPORT‑1, notify affected residents under state breach law, and are required to submit sample notices to the AG if >500 residents are impacted.",
+    "category": "Incidents"
+  },
+  {
+    "question": "Has any hospital in California been hacked recently?",
+    "answer": "Yes—for example, in early 2024, Sacramento Rehabilitation Hospital experienced a breach involving patient data; multiple healthcare entities are listed on the AG's portal as recently notifying affected residents.",
+    "category": "Incidents"
+  },
+  {
+    "question": "Do cities report local cyber incidents?",
+    "answer": "Yes—municipalities and public agencies must notify residents and submit sample notices to the AG when breaches affect >500 residents. Examples include City of Bakersfield and San Diego Unified School District incidents listed on the AG portal.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What’s the most recent cyber policy in CA?",
+    "answer": "The latest major policy is the updated ESF‑18 Cybersecurity Annex (2023), which expands digital forensics, public-private threat sharing, and resilience strategies under California’s statewide emergency plan. It was formally approved in Sept 2023.",
+    "category": "News"
+  },
+  {
+    "question": "Has California passed new cybersecurity laws this year?",
+    "answer": "In 2024–2025, no major new cybersecurity laws were enacted, but revisions to AB‑2355 and SB‑1386 improved reporting processes while ESG and Cal‑CSIC funding programs were updated under state budget governance. Continued grant implementation is underway.",
+    "category": "News"
+  },
+  {
+    "question": "What events are planned for Cybersecurity Awareness Month?",
+    "answer": "Each October, Cal‑OES/Cal‑CSIC hosts webinars, newsletters, public awareness campaigns, and cyber‑range exercises for schools, businesses and agencies as part of National Cybersecurity Awareness Month. Details are published on Cal‑OES News.",
+    "category": "News"
+  },
+  {
+    "question": "Are there public meetings on cybersecurity in CA?",
+    "answer": "Yes—Cal‑CSIC and the California Cybersecurity Task Force host periodic public meetings and forums with state, local, tribal, and private sectors. These include annual cyber symposiums and cybersecurity panels organized by Cal OES under its request-for-info and budget process. Subcommittee meetings are listed on the Cal‑CSIC/task force web pages.",
+    "category": "News"
+  },
+  {
+    "question": "What did the governor say about cyber threats?",
+    "answer": "In his 2024 State of the State address, Governor Newsom warned that “the California way of life is under attack” and emphasized the state must defend itself not only from political polarization but also from growing cyber and digital threats targeting critical services.",
+    "category": "News"
+  },
+  {
+    "question": "Are there public alerts for digital threats?",
+    "answer": "Yes—Cal‑CSIC issues Cyber Threat Alerts and Advisories to public and private partners statewide via the Automated Indicator Exchange platform. Cal OES also uses Wireless Emergency Alerts (WEA) and its official website to push urgent cybersecurity warnings.",
+    "category": "News"
+  },
+  {
+    "question": "What did CDT tweet this week?",
+    "answer": "This week, the California Department of Technology (CDT) posted a call for vendors for a new round of CALNET Wireless Services, including cellular, satellite, and fixed wireless options. Questions are due July 21, bids due Aug 25.",
+    "category": "News"
+  },
+  {
+    "question": "Has Cal OES updated its cyber dashboard?",
+    "answer": "Cal OES recently redesigned its 'Active Incidents' and cybersecurity dashboard sections on their website, with updates under construction and new threat-intel status pages coming soon. The main 'Homeland Security' page continues to highlight Cal‑CSIC’s cyber monitoring resources.",
+    "category": "News"
+  },
+  {
+    "question": "Are there any new cyber task forces?",
+    "answer": "Yes—under Cal‑CSIC, the California Cybersecurity Task Force maintains active subcommittees such as Cyber Risk Management, Information Sharing, and High-Tech & Digital Forensics. These groups periodically reconvene, and updates are posted on the Cal‑CSIC website.",
+    "category": "News"
+  },
+  {
+    "question": "What’s trending in California’s cyber space?",
+    "answer": "Current trends include increased focus on generative AI threats (e.g., deepfakes), utility grid vulnerabilities, and emergency system resilience (NextGen 911/988). CDT recently issued an RFQ for cybersecurity assessments, and legislation like AB 2655 targets deepfake misinformation. All are being actively addressed across Cal‑OES, CDT, and Cal‑CSIC.",
+    "category": "News"
+  }
+]
