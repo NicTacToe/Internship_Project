@@ -325,14 +325,54 @@ async function loadKnowledgeBase() {
 // Fallback knowledge base (unchanged)
 function getFallbackKnowledgeBase() {
     return [
+{
+    "question": "Hi",
+    "answer": "Hello! I'm your California cybersecurity information assistant. What can I help you with today?",
+    "category": "General"
+  },
+{
+    "question": "ice cream",
+    "answer": "yummy :D",
+    "category": "General"
+  },
+{
+    "question": "How are you?",
+    "answer": "I'm doing great! How can I assist you today?",
+    "category": "General"
+  },
+{
+    "question": "What was the latest cyber threat reported?",
+    "answer": "According to Cal‑CSIC’s 2021–23 report, ransomware attacks saw a 57% increase and phishing threats remain highly prevalent statewide, with over 1,500 total cybersecurity incidents documented.",
+    "category": "Threats"
+  },
+{
+    "question": "What is cybersecurity?",
+    "answer": "Cybersecurity is the practice of protecting internet-connected systems—physical and virtual—from digital attacks that aim to access, alter, or destroy data, often by adversaries using techniques like malware, phishing, or ransomware.",
+    "category": "General"
+  },
+{
+    "question": "What is two-factor authentication?",
+    "answer": "Two‑factor authentication (2FA) adds a second verification step—like a code from your phone—beyond your password. Cal‑CSIC strongly recommends 2FA to reduce account compromise.",
+    "category": "General"
+  },
+{
+    "question": "What is malware?",
+    "answer": "Malware (malicious software) is any software designed to harm devices or networks by disrupting operations, stealing data, or launching attacks—e.g., viruses, worms, ransomware—identified as a major threat to critical infrastructure in California’s ESF‑18 Annex.",
+    "category": "Threats"
+  },
+{
+    "question": "What is a brute force attack?",
+    "answer": "A brute force attack systematically tries all password combinations to gain unauthorized access. Cal‑CSIC training programs emphasize password strength and anti-brute-force measures such as MFA and account lockouts.",
+    "category": "Threats"
+  },
         {
-            question: "What are California's cybersecurity laws?",
-            answer: "California has several key cybersecurity laws:\n\n🏛️ **SB-327 (IoT Security Law)**: Requires IoT devices to have unique passwords\n\n📋 **CCPA (California Consumer Privacy Act)**: Protects consumer data and requires breach notifications\n\n🔒 **SB-1001**: Requires disclosure of data collection by bots\n\n⚖️ **Civil Code 1798.82**: Mandates breach notifications to affected individuals\n\nThese laws position California as a leader in privacy and cybersecurity regulation.",
-            category: "General"
-        },
+    "question": "What are California's cybersecurity laws?",
+    "answer": "California has several key cybersecurity laws. Some examples are SB-327 (IoT Security Law) which requires IoT devices to have unique passwords, CCPA (California Consumer Privacy Act), which protects consumer data and requires breach notifications, SB-1001, which requires disclosure of data collection by bots, and Civil Code 1798.82, which mandates breach notifications to affected individuals. These laws position California as a leader in privacy and cybersecurity regulation.",
+    "category": "General"
+  },
         {
-            question: "What is Cal-CSIC?",
-            answer: "The Cal‑CSIC is California's cybersecurity hub, part of Cal OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
+            "question": "What is Cal-CSIC?",
+            "answer": "The Cal‑CSIC is California's cybersecurity hub, part of Cal OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
             category: "Initiatives"
         }
     ];
@@ -341,39 +381,65 @@ function getFallbackKnowledgeBase() {
         // Enhanced search algorithm
         function findBestMatch(query) {
             if (!dataLoaded || knowledgeBase.length === 0) {
+                console.log('Knowledge base not loaded or empty');
                 return {
                     answer: "🔄 Loading knowledge base... Please try again in a moment.",
                     category: "System"
                 };
             }
 
-            const lowerQuery = query.toLowerCase();
-            let bestMatch = null;
-            let maxScore = 0;
+            const lowerQuery = query.toLowerCase().trim();
+            console.log(`Processing query: "${lowerQuery}"`);
 
-            // First, try to find exact or near-exact question matches
+            // First, try exact match
             for (const item of knowledgeBase) {
-                const questionSimilarity = calculateSimilarity(lowerQuery, item.question.toLowerCase());
-                if (questionSimilarity > 0.8) {
+                const lowerQuestion = item.question.toLowerCase().trim();
+                if (lowerQuery === lowerQuestion) {
+                    console.log(`Exact match found for question: "${item.question}"`);
                     return item;
                 }
             }
 
-            // Then search by keywords and content
+            // Reject short single-word queries unless they match exactly
+            const queryWords = lowerQuery.split(/\s+/);
+            if (queryWords.length === 1 && queryWords[0].length < 4) {
+                const categories = [...new Set(knowledgeBase.map(item => item.category))];
+                console.log(`Rejecting short single-word query: "${lowerQuery}"`);
+                return {
+                    answer: `Sorry, I don't have information about "${query}". I'm focused on California cybersecurity. Try asking about these topics:\n\n${categories.map(cat => `• ${cat}`).join('\n')}\n\nExamples:\n• "What is Cal-CSIC?"\n• "Recent cyber threats"\n• "How to report cyber attacks"\n• "California cybersecurity laws"`,
+                    category: "General"
+                };
+            }
+
+            // Then try near-exact match using Jaccard similarity
+            let bestMatch = null;
+            let maxScore = 0;
+            for (const item of knowledgeBase) {
+                const questionSimilarity = calculateSimilarity(lowerQuery, item.question.toLowerCase().trim());
+                if (questionSimilarity > 0.8) {
+                    console.log(`Near-exact match found for question: "${item.question}" with similarity ${questionSimilarity}`);
+                    return item;
+                }
+            }
+
+            // Finally, search by keywords and content
             for (const item of knowledgeBase) {
                 let score = 0;
-                const searchText = `${item.question} ${item.answer}`.toLowerCase();
+                const searchText = `${item.question} ${item.answer}`.toLowerCase().trim();
                 
                 // Split query into words and check each
                 const queryWords = lowerQuery.split(/\s+/).filter(word => word.length > 2);
                 
                 queryWords.forEach(word => {
                     // Count occurrences of each word
-                    const occurrences = (searchText.match(new RegExp(word, 'g')) || []).length;
+                    const occurrences = (searchText.match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
                     score += occurrences * word.length;
                     
                     // Bonus for question title matches
-                    if (item.question.toLowerCase().includes(word)) {
+                    const lowerQuestion = item.question.toLowerCase().trim();
+                    if (lowerQuestion === lowerQuery) {
+                        score += 100; // High bonus for exact question match
+                    } else if (lowerQuestion.includes(word)) {
                         score += word.length * 2;
                     }
                 });
@@ -381,18 +447,21 @@ function getFallbackKnowledgeBase() {
                 if (score > maxScore) {
                     maxScore = score;
                     bestMatch = item;
+                    console.log(`Keyword match for question: "${item.question}" with score ${score}`);
                 }
             }
 
-            // If no good match found, provide helpful suggestions
-            if (maxScore === 0 || !bestMatch) {
+            // If no good match found or score is too low, return a "don't understand" message
+            if (maxScore < 12 || !bestMatch) { // Increased threshold to 12
                 const categories = [...new Set(knowledgeBase.map(item => item.category))];
+                console.log(`No good match found for query: "${query}", maxScore: ${maxScore}`);
                 return {
-                    answer: `I understand you're asking about California cybersecurity. I have information on these topics:\n\n${categories.map(cat => `• ${cat}`).join('\n')}\n\nTry asking about specific topics like:\n• "What is Cal-CSIC?"\n• "Recent cyber threats"\n• "How to report cyber attacks"\n• "California cybersecurity laws"`,
+                    answer: `Sorry, I don't have information about "${query}". I'm focused on California cybersecurity. Try asking about these topics:\n\n${categories.map(cat => `• ${cat}`).join('\n')}\n\nExamples:\n• "What is Cal-CSIC?"\n• "Recent cyber threats"\n• "How to report cyber attacks"\n• "California cybersecurity laws"`,
                     category: "General"
                 };
             }
 
+            console.log(`Returning best match: "${bestMatch.question}" with score ${maxScore}`);
             return bestMatch;
         }
 

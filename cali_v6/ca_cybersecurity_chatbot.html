@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA CyberSec Info Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9ff;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .message.user {
+            justify-content: flex-end;
+        }
+        
+        .message.bot {
+            justify-content: flex-start;
+        }
+        
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .message.bot .message-content {
+            background: white;
+            border: 1px solid #e1e5e9;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .user .avatar {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            order: 2;
+        }
+        
+        .bot .avatar {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+        
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e1e5e9;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .send-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+        
+        .send-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .send-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+        }
+        
+        .typing-dots {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #999;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+        
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .suggestion-btn {
+            padding: 6px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .suggestion-btn:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ California Cybersecurity Info Bot</h1>
+            <p>Get the latest information on California's cybersecurity landscape</p>
+        </div>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot">
+                <div class="avatar">🤖</div>
+                <div class="message-content">
+                    Welcome! I'm your California cybersecurity information assistant. I can help you with:
+                    <br><br>
+                    • State cybersecurity laws and regulations<br>
+                    • Recent cyber threats in California<br>
+                    • Government initiatives and programs<br>
+                    • Industry compliance requirements<br>
+                    • Security best practices for CA businesses
+                    <div class="suggestions">
+                        <div class="suggestion-btn" onclick="sendSuggestion('What are California\'s main cybersecurity laws?')">CA Cyber Laws</div>
+                        <div class="suggestion-btn" onclick="sendSuggestion('Recent cyber threats in California')">Recent Threats</div>
+                        <div class="suggestion-btn" onclick="sendSuggestion('CCPA compliance requirements')">CCPA Info</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="avatar">🤖</div>
+            <div class="message-content">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" class="input-field" id="messageInput" placeholder="Ask me about California cybersecurity..." />
+            <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulated knowledge base
+        const knowledgeBase = {
+            'california cybersecurity laws': {
+                response: "California has several key cybersecurity laws:\n\n🏛️ **SB-327 (IoT Security Law)**: Requires IoT devices to have unique passwords\n\n📋 **CCPA (California Consumer Privacy Act)**: Protects consumer data and requires breach notifications\n\n🔒 **SB-1001**: Requires disclosure of data collection by bots\n\n⚖️ **Civil Code 1798.82**: Mandates breach notifications to affected individuals\n\nThese laws position California as a leader in privacy and cybersecurity regulation.",
+                keywords: ['law', 'laws', 'regulation', 'ccpa', 'sb-327', 'legal', 'compliance']
+            },
+            'recent cyber threats': {
+                response: "Recent cybersecurity threats affecting California include:\n\n🎯 **Ransomware attacks** on healthcare systems and municipalities\n\n🏭 **Supply chain attacks** targeting tech companies in Silicon Valley\n\n🏫 **Educational sector breaches** affecting student data\n\n💳 **Financial fraud** through social engineering\n\n🏢 **Business email compromise** schemes targeting remote workers\n\nCA-CSIC regularly issues alerts about emerging threats to help organizations stay protected.",
+                keywords: ['threat', 'threats', 'attack', 'ransomware', 'breach', 'hack', 'recent', 'current']
+            },
+            'ccpa compliance': {
+                response: "CCPA (California Consumer Privacy Act) compliance requirements:\n\n✅ **Consumer Rights**: Right to know, delete, and opt-out of data sales\n\n📝 **Privacy Policy Updates**: Must detail data collection and sharing practices\n\n🔔 **Breach Notifications**: Within 72 hours for certain incidents\n\n💰 **Penalties**: Up to $7,500 per violation for intentional violations\n\n🎯 **Scope**: Applies to businesses with $25M+ revenue or handling 50K+ consumers' data\n\nRegular audits and employee training are essential for maintaining compliance.",
+                keywords: ['ccpa', 'compliance', 'privacy', 'consumer', 'gdpr', 'data protection']
+            },
+            'california cyber initiatives': {
+                response: "California's cybersecurity initiatives include:\n\n🏛️ **CA-CSIC**: California Cybersecurity Integration Center providing threat intelligence\n\n💼 **CyberCA Program**: Public-private partnerships for cyber resilience\n\n🎓 **Workforce Development**: Training programs for cybersecurity professionals\n\n🏥 **Critical Infrastructure Protection**: Securing power grids, water systems, and transportation\n\n🤝 **Multi-State Information Sharing**: Collaboration with other states on cyber threats\n\nThe state invested $50M+ in cybersecurity infrastructure in recent years.",
+                keywords: ['initiative', 'program', 'government', 'ca-csic', 'investment', 'infrastructure']
+            },
+            'business security best practices': {
+                response: "Essential cybersecurity practices for California businesses:\n\n🔐 **Multi-Factor Authentication**: Implement MFA across all systems\n\n🛡️ **Regular Security Training**: Employee awareness programs\n\n💾 **Data Backup & Recovery**: Automated backups with offline copies\n\n🔄 **Software Updates**: Keep all systems and software current\n\n📊 **Risk Assessments**: Regular security audits and penetration testing\n\n🚨 **Incident Response Plan**: Documented procedures for security breaches\n\n🏢 **Vendor Management**: Assess third-party security practices\n\nThese practices help ensure CCPA compliance and protect against evolving threats.",
+                keywords: ['best practices', 'business', 'security', 'mfa', 'training', 'backup', 'assessment']
+            }
+        };
+
+        let isTyping = false;
+
+        function findBestMatch(query) {
+            const lowerQuery = query.toLowerCase();
+            let bestMatch = null;
+            let maxScore = 0;
+
+            for (const [key, data] of Object.entries(knowledgeBase)) {
+                let score = 0;
+                data.keywords.forEach(keyword => {
+                    if (lowerQuery.includes(keyword)) {
+                        score += keyword.length;
+                    }
+                });
+                
+                if (score > maxScore) {
+                    maxScore = score;
+                    bestMatch = data;
+                }
+            }
+
+            if (maxScore === 0) {
+                return {
+                    response: "I understand you're asking about California cybersecurity. Could you be more specific? I can help with:\n\n• State cybersecurity laws and regulations\n• Recent cyber threats and incidents\n• CCPA compliance requirements\n• Government cybersecurity initiatives\n• Security best practices for businesses\n\nTry asking about topics like 'California cyber laws', 'CCPA requirements', or 'recent cyber threats'.",
+                    keywords: []
+                };
+            }
+
+            return bestMatch;
+        }
+
+        function addMessage(content, isUser = false) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            messageDiv.innerHTML = `
+                <div class="avatar">${isUser ? '👤' : '🤖'}</div>
+                <div class="message-content">${content}</div>
+            `;
+            
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.style.display = 'flex';
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            indicator.style.display = 'none';
+        }
+
+        function simulateAPICall(query) {
+            return new Promise(resolve => {
+                const delay = Math.random() * 2000 + 1000; // 1-3 seconds
+                setTimeout(() => {
+                    const match = findBestMatch(query);
+                    resolve(match.response);
+                }, delay);
+            });
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const sendBtn = document.getElementById('sendBtn');
+            const message = input.value.trim();
+            
+            if (!message || isTyping) return;
+            
+            isTyping = true;
+            sendBtn.disabled = true;
+            
+            addMessage(message, true);
+            input.value = '';
+            
+            showTypingIndicator();
+            
+            try {
+                const response = await simulateAPICall(message);
+                hideTypingIndicator();
+                addMessage(response);
+            } catch (error) {
+                hideTypingIndicator();
+                addMessage("Sorry, I'm experiencing technical difficulties. Please try again in a moment.", false);
+            }
+            
+            isTyping = false;
+            sendBtn.disabled = false;
+            input.focus();
+        }
+
+        function sendSuggestion(suggestion) {
+            const input = document.getElementById('messageInput');
+            input.value = suggestion;
+            sendMessage();
+        }
+
+        // Event listeners
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Focus input on load
+        document.getElementById('messageInput').focus();
+    </script>
+</body>
+</html>

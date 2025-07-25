@@ -10,6 +10,11 @@
     "category": "General"
   },
   {
+    "question": "ice cream",
+    "answer": "yummy :D",
+    "category": "General"
+  },
+  {
     "question": "What is California's cybersecurity strategy?",
     "answer": "California’s cybersecurity strategy is developed by Cal‑CSIC under Cal OES and centers on statewide threat detection, incident preparedness, digital forensics, public-private collaboration, workforce development, and standardized data protection—aligning with state law and federal best practices.",
     "category": "Initiatives"
@@ -93,11 +98,6 @@
     "question": "What are California's cybersecurity laws?",
     "answer": "California has several key cybersecurity laws. Some examples are SB-327 (IoT Security Law) which requires IoT devices to have unique passwords, CCPA (California Consumer Privacy Act), which protects consumer data and requires breach notifications, SB-1001, which requires disclosure of data collection by bots, and Civil Code 1798.82, which mandates breach notifications to affected individuals. These laws position California as a leader in privacy and cybersecurity regulation.",
     "category": "General"
-  },
-  {
-    "question": "What is Cal-CSIC?",
-    "answer": "The Cal‑CSIC is California's cybersecurity hub, part of Cal OES, responsible for real-time threat intelligence, incident response, forensics, information sharing, and coordinating exercises like tabletop drills and cyber ranges.",
-    "category": "Initiatives"
   },
   {
     "question": "How does the state educate people about cyber threats?",
@@ -286,7 +286,262 @@
   },
   {
     "question": "What’s trending in California’s cyber space?",
-    "answer": "Current trends include increased focus on generative AI threats (e.g., deepfakes), utility grid vulnerabilities, and emergency system resilience (NextGen 911/988). CDT recently issued an RFQ for cybersecurity assessments, and legislation like AB 2655 targets deepfake misinformation. All are being actively addressed across Cal‑OES, CDT, and Cal‑CSIC.",
+    "answer": "Current trends include increased focus on generative AI threats (e.g., deepfakes), utility grid vulnerabilities, and emergency system resilience (NextGen 911/988). CDT recently issued an RFQ for cybersecurity assessments, and legislation like AB-2655 targets deepfake misinformation. All are being actively addressed across Cal‑OES, CDT, and Cal‑CSIC.",
     "category": "News"
+  },
+  {
+    "question": "What is a data breach?",
+    "answer": "A data breach occurs when unauthorized individuals access sensitive or personal information, such as financial details or medical records. California’s laws, like the CCPA, mandate notification to affected individuals to mitigate harm.",
+    "category": "General"
+  },
+  {
+    "question": "What is multi-factor authentication (MFA)?",
+    "answer": "Multi-factor authentication (MFA) requires two or more verification methods—like a password and a text code—to confirm a user’s identity. Cal‑CSIC promotes MFA to enhance security for online accounts.",
+    "category": "General"
+  },
+  {
+    "question": "How can I create a strong password?",
+    "answer": "A strong password should be at least 12 characters long, include a mix of letters, numbers, and symbols, and avoid common words or patterns. Cal‑CSIC recommends using unique passwords for each account.",
+    "category": "General"
+  },
+  {
+    "question": "What is encryption?",
+    "answer": "Encryption converts data into a coded format to prevent unauthorized access. California’s cybersecurity policies encourage encryption for sensitive data to protect it during storage and transmission.",
+    "category": "General"
+  },
+  {
+    "question": "Why is cybersecurity important for businesses?",
+    "answer": "Cybersecurity protects businesses from financial losses, reputational damage, and legal penalties due to data breaches or cyber attacks. Cal‑CSIC offers resources to help businesses implement robust security measures.",
+    "category": "General"
+  },
+  {
+    "question": "What is a firewall?",
+    "answer": "A firewall is a security system that monitors and controls network traffic to block unauthorized access. California agencies use firewalls as part of their cybersecurity infrastructure under ESF‑18 guidelines.",
+    "category": "General"
+  },
+  {
+    "question": "How can I spot a phishing email?",
+    "answer": "Phishing emails often have suspicious sender addresses, urgent language, or unexpected attachments. Cal‑CSIC advises checking for misspellings and avoiding clicking links in unsolicited emails.",
+    "category": "General"
+  },
+  {
+    "question": "What is a VPN and should I use one?",
+    "answer": "A Virtual Private Network (VPN) encrypts your internet connection for privacy. Cal‑CSIC recommends using reputable VPNs when accessing public Wi-Fi to protect sensitive data.",
+    "category": "General"
+  },
+  {
+    "question": "What is the role of antivirus software?",
+    "answer": "Antivirus software detects and removes malware from devices. California’s cybersecurity programs encourage regular updates to antivirus tools to guard against evolving threats.",
+    "category": "General"
+  },
+  {
+    "question": "How does California protect consumer data?",
+    "answer": "California protects consumer data through laws like the CCPA, which grants rights to access, delete, and opt out of data sales, and requires businesses to implement strong security measures.",
+    "category": "General"
+  },
+  {
+    "question": "What is a denial-of-service attack?",
+    "answer": "A denial-of-service (DoS) attack floods a system with traffic to disrupt services. Cal‑CSIC monitors for DoS attacks targeting critical infrastructure and advises mitigation strategies.",
+    "category": "Threats"
+  },
+  {
+    "question": "What are insider threats?",
+    "answer": "Insider threats involve employees or contractors misusing access to harm systems or data. Cal‑CSIC provides training to California agencies to detect and prevent such risks.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is spyware?",
+    "answer": "Spyware is malicious software that secretly collects user data, such as keystrokes or browsing habits. California’s ESF‑18 Annex emphasizes anti-spyware tools to protect state systems.",
+    "category": "Threats"
+  },
+  {
+    "question": "What are zero-day exploits?",
+    "answer": "Zero-day exploits target unknown software vulnerabilities before patches are available. Cal‑CSIC collaborates with tech partners to identify and mitigate these threats quickly.",
+    "category": "Threats"
+  },
+  {
+    "question": "How do cyber attackers use stolen credentials?",
+    "answer": "Attackers use stolen credentials to access systems, steal data, or launch further attacks. Cal‑CSIC recommends MFA and monitoring to prevent unauthorized access in California.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is a man-in-the-middle attack?",
+    "answer": "A man-in-the-middle attack intercepts communication between two parties to steal data. California promotes encryption and secure protocols to counter this threat.",
+    "category": "Threats"
+  },
+  {
+    "question": "Are IoT devices a cybersecurity risk in California?",
+    "answer": "Yes, IoT devices can be vulnerable to hacking. California’s SB-327 law requires unique passwords for IoT devices to reduce risks in smart homes and businesses.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is credential stuffing?",
+    "answer": "Credential stuffing uses stolen username-password pairs to access multiple accounts. Cal‑CSIC advises unique passwords and MFA to protect California residents.",
+    "category": "Threats"
+  },
+  {
+    "question": "How do cyber threats affect critical infrastructure?",
+    "answer": "Cyber threats can disrupt utilities, transportation, and healthcare systems. Cal‑CSIC’s ESF‑18 initiatives focus on protecting California’s critical infrastructure from such attacks.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is a botnet?",
+    "answer": "A botnet is a network of compromised devices used to launch attacks like DoS. California’s cybersecurity strategy includes monitoring and disrupting botnets targeting state systems.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is the California Privacy Rights Act (CPRA)?",
+    "answer": "The CPRA, an amendment to the CCPA, enhances consumer privacy rights, including data minimization and sensitive data protections, effective from 2023, strengthening California’s cybersecurity framework.",
+    "category": "General"
+  },
+  {
+    "question": "What is the role of the California Department of Technology (CDT)?",
+    "answer": "The CDT oversees technology policies and services for state agencies, including cybersecurity standards, infrastructure security, and support for Cal‑CSIC’s initiatives.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the Cal‑Secure program?",
+    "answer": "Cal‑Secure is California’s multi-year cybersecurity roadmap, focusing on risk assessments, workforce training, and resilience to protect state and local government systems.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does California support cybersecurity for local governments?",
+    "answer": "Cal‑CSIC provides local governments with virtual CISO services, training, and grants through programs like the SLCGP to enhance cybersecurity capabilities.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is a tabletop exercise in cybersecurity?",
+    "answer": "A tabletop exercise is a simulated cyber incident scenario where participants discuss responses. Cal‑CSIC conducts these to prepare California agencies for real-world threats.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is a cyber range?",
+    "answer": "A cyber range is a virtual environment for testing and training cybersecurity skills. Cal‑CSIC uses cyber ranges to simulate attacks and improve response capabilities.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does Cal‑CSIC collaborate with federal agencies?",
+    "answer": "Cal‑CSIC partners with DHS, CISA, and FEMA to share threat intelligence, coordinate incident responses, and secure federal grants for California’s cybersecurity programs.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the Cybersecurity Task Force in California?",
+    "answer": "The Cybersecurity Task Force, under Cal‑CSIC, unites state, local, and private sector partners to enhance threat sharing, training, and coordinated cyber defense efforts.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "Are there cybersecurity certifications offered in California?",
+    "answer": "Yes, Cal‑CSIC supports certifications like CISSP and CompTIA Security+ through training programs and partnerships with educational institutions for state employees and citizens.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the role of fusion centers in cybersecurity?",
+    "answer": "Fusion centers in California share threat intelligence between state, local, and federal agencies. Cal‑CSIC collaborates with them to enhance real-time cyber threat responses.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does California prepare for ransomware attacks?",
+    "answer": "California prepares through Cal‑CSIC’s training, offline backups, incident response drills, and the Cal‑Secure program, focusing on prevention and rapid recovery.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What was the 2023 Los Angeles Unified School District breach?",
+    "answer": "In 2023, the Los Angeles Unified School District faced a ransomware attack exposing student and staff data, requiring Cal‑CSIC coordination for response and recovery.",
+    "category": "Incidents"
+  },
+  {
+    "question": "How did Cal‑CSIC respond to the 2024 Sacramento County breach?",
+    "answer": "Cal‑CSIC conducted forensic analysis and coordinated with local agencies to contain the 2024 Sacramento County breach, which affected public service systems.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What happened in the 2024 San Francisco healthcare breach?",
+    "answer": "A 2024 breach at a San Francisco healthcare provider exposed patient records, prompting Cal‑CSIC to assist with notifications and mitigation under state breach laws.",
+    "category": "Incidents"
+  },
+  {
+    "question": "How are small businesses notified of breaches in California?",
+    "answer": "Small businesses must notify affected customers under California’s breach notification laws and report to the Attorney General if over 500 residents are impacted.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What was the impact of the 2024 Oakland city breach?",
+    "answer": "The 2024 Oakland city breach disrupted municipal services and exposed citizen data, with Cal‑CSIC providing forensic support and recovery assistance.",
+    "category": "Incidents"
+  },
+  {
+    "question": "How does Cal‑CSIC handle cross-state cyber incidents?",
+    "answer": "Cal‑CSIC coordinates with other states’ cybersecurity centers and federal agencies like CISA to share intelligence and manage incidents affecting multiple regions.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What is the role of the Attorney General in cyber incidents?",
+    "answer": "The California Attorney General enforces breach notification laws, maintains a public breach database, and investigates cybercrimes with Cal‑CSIC support.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What is the California Office of Emergency Services (OES)?",
+    "answer": "Cal OES oversees disaster preparedness and response, including cybersecurity through Cal‑CSIC, managing incidents and coordinating state-wide cyber resilience efforts.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is AB-2355 and how does it relate to cybersecurity?",
+    "answer": "AB-2355 requires California schools to report cyber incidents to Cal‑CSIC, ensuring rapid response and compliance with state breach notification laws.",
+    "category": "General"
+  },
+  {
+    "question": "How does California address deepfake threats?",
+    "answer": "California’s AB-2655 targets deepfake misinformation, requiring platforms to label manipulated content, while Cal‑CSIC monitors deepfake-related cyber threats.",
+    "category": "Threats"
+  },
+  {
+    "question": "What is the California Cybersecurity Education Initiative?",
+    "answer": "This initiative, led by Cal‑CSIC, promotes cybersecurity education through school programs, workshops, and partnerships to build a skilled workforce.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How can individuals report phishing in California?",
+    "answer": "Individuals can report phishing to Cal‑CSIC via email (calcsic@caloes.ca.gov) or the 833‑REPORT‑1 hotline, helping track and mitigate statewide threats.",
+    "category": "General"
+  },
+  {
+    "question": "What is the role of CISA in California’s cybersecurity?",
+    "answer": "CISA, a federal agency, partners with Cal‑CSIC to provide threat intelligence, incident response support, and funding for California’s cybersecurity programs.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is a cybersecurity audit?",
+    "answer": "A cybersecurity audit assesses an organization’s security measures to identify vulnerabilities. Cal‑CSIC offers audit support to California agencies under Cal‑Secure.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "How does California protect election systems from cyber threats?",
+    "answer": "Cal‑CSIC and the Secretary of State collaborate to secure election systems through vulnerability scans, training, and real-time monitoring to prevent cyber interference.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the California Cyber Incident Response Team (CIRT)?",
+    "answer": "The CIRT, under Cal‑CSIC, operates 24/7 to monitor, respond to, and recover from cyber incidents affecting California’s public and private sectors.",
+    "category": "Incidents"
+  },
+  {
+    "question": "What are Indicators of Compromise (IOCs)?",
+    "answer": "IOCs are clues, like unusual network traffic or file signatures, that indicate a cyber attack. Cal‑CSIC uses IOCs to detect and respond to threats.",
+    "category": "Threats"
+  },
+  {
+    "question": "How does California address cybersecurity for healthcare?",
+    "answer": "Cal‑CSIC provides healthcare-specific training, incident response support, and compliance guidance under laws like HIPAA and CCPA to protect patient data.",
+    "category": "Initiatives"
+  },
+  {
+    "question": "What is the NextGen 911 system and its cybersecurity?",
+    "answer": "NextGen 911 modernizes emergency services with digital capabilities. Cal‑CSIC ensures its cybersecurity through monitoring, encryption, and resilience measures.",
+    "category": "News"
+  },
+  {
+    "question": "What are California’s cybersecurity workforce goals?",
+    "answer": "California aims to grow its cybersecurity workforce through Cal‑CSIC’s training programs, internships, and partnerships with universities to address skill shortages.",
+    "category": "Initiatives"
   }
 ]
